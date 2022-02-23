@@ -1,0 +1,293 @@
+html {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #ecf2f8;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-rows: 8fr 1fr;
+      grid-template-rows: 8fr 1fr;
+  margin: 0;
+}
+
+body .main {
+  min-width: 40rem;
+  width: min(60%, 40rem);
+  min-height: 15rem;
+  height: min(40%, 15rem);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 0.5;
+      grid-template-columns: 1fr 1fr 0.5;
+      grid-template-areas: "image info info";
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0rem 1rem 1rem 0rem rgba(151, 167, 186, 0.226);
+          box-shadow: 0rem 1rem 1rem 0rem rgba(151, 167, 186, 0.226);
+  margin: 3rem 0;
+}
+
+body .main .img-container {
+  width: 15rem;
+  height: 15rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+}
+
+body .main .img-container img {
+  border-radius: 0.5rem 0 0 0.5rem;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .main .info-container {
+  padding: 1.5rem 2rem 1rem;
+  background: white;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: info;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+body .main .info-container header {
+  margin-bottom: 1.5rem;
+}
+
+body .main .info-container header .heading {
+  color: #48556a;
+  font-size: 1.1rem;
+}
+
+body .main .info-container header .paragraph {
+  color: #6d7f97;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+body .main .info-container .profile {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
+}
+
+body .main .info-container .profile .profile-pic {
+  width: 2rem;
+  border-radius: 50%;
+}
+
+body .main .info-container .profile .profile-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .main .info-container .profile .profile-info .profile-name {
+  color: #48556a;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+body .main .info-container .profile .profile-info .profile-date {
+  color: #6d7f97;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+body .main .info-container .profile .share-container {
+  position: relative;
+  right: 0;
+  padding: 0.2rem 0 0 1.5rem;
+}
+
+body .main .info-container .profile .share-container .share-btn-container {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #6d7f97;
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+body .main .info-container .profile .share-container .share-btn-container .share-btn {
+  width: 0.65rem;
+  height: 0.6rem;
+  background: #6d7f97;
+}
+
+body .main .info-container .profile .share-container .share-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 13rem;
+  -ms-grid-columns: 3fr (1fr)[3];
+      grid-template-columns: 3fr repeat(3, 1fr);
+  height: 2.8rem;
+  border-radius: 0.5rem;
+  background: #48556a;
+  position: absolute;
+  left: -140%;
+  top: -200%;
+  opacity: 0;
+}
+
+body .main .info-container .profile .share-container .share-links::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background: #48556a;
+  position: absolute;
+  bottom: -15%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .main .info-container .profile .share-container .share-links h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #97a7ba;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+body .main .info-container .profile .share-container .share-links img {
+  width: 1rem;
+  height: 1rem;
+  padding: 0 0.5rem;
+}
+
+body .attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #6d7f97;
+  font-weight: 700;
+  padding-bottom: 2rem;
+}
+
+body .attribution a {
+  color: #48556a;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 700px) {
+  body .main {
+    min-width: 20rem;
+    width: min(80%, 20rem);
+    min-height: 30rem;
+    height: min(70%, 30rem);
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "image image" "info info" "info info";
+  }
+  body .main .img-container {
+    width: 20rem;
+    height: 12rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: image;
+  }
+  body .main .img-container img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body .main .info-container {
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  body .main .info-container header .paragraph {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  body .main .info-container .profile .profile-pic {
+    width: 2.5rem;
+    margin-right: 1rem;
+  }
+  body .main .info-container .profile .profile-info .profile-name {
+    font-size: 0.8rem;
+  }
+  body .main .info-container .profile .profile-info .profile-date {
+    font-size: 0.8rem;
+  }
+  body .main .info-container .profile .share-container {
+    right: 1.8rem;
+  }
+  body .main .info-container .profile .share-container .share-btn-container {
+    background: #ecf2f8;
+    width: 2rem;
+    height: 2rem;
+  }
+  body .main .info-container .profile .share-container .share-btn-container .share-btn {
+    width: 0.85rem;
+    height: 0.8rem;
+    background: #ecf2f8;
+  }
+  body .main .info-container .profile .share-container .share-links {
+    left: -360%;
+  }
+  body .main .info-container .profile .share-container .share-links::before {
+    right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  body .main .info-container .profile .share-container .share-btn-container {
+    z-index: 2;
+  }
+  body .main .info-container .profile .share-container .share-btn-container .share-btn {
+    width: 0.85rem;
+    height: 0.8rem;
+  }
+  body .main .info-container .profile .share-container .share-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 20rem;
+    height: 4rem;
+    left: -678%;
+    top: -25%;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  body .main .info-container .profile .share-container .share-links::before {
+    opacity: 0;
+  }
+  body .main .info-container .profile .share-container .share-links h2 {
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+  }
+  body .main .info-container .profile .share-container .share-links img {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0 0.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

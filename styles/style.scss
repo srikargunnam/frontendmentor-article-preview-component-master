@@ -1,0 +1,264 @@
+// Colors
+
+$Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+$Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+$Grayish-Blue: hsl(212, 20%, 66%);
+$Grayish-Blue-shadow: hsla(213, 20%, 66%, 0.226);
+$Light-Grayish-Blue: hsl(210, 46%, 95%);
+$White: hsl(0, 100%, 100%);
+
+html {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $Light-Grayish-Blue;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 8fr 1fr;
+  margin: 0;
+  .main {
+    min-width: 40rem;
+    width: unquote("min(60%, 40rem)");
+    min-height: 15rem;
+    height: unquote("min(40%, 15rem)");
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5;
+    grid-template-areas: "image info info";
+    border-radius: 0.5rem;
+    box-shadow: 0rem 1rem 1rem 0rem $Grayish-Blue-shadow;
+    margin: 3rem 0;
+    .img-container {
+      width: 15rem;
+      height: 15rem;
+      grid-area: image;
+      img {
+        border-radius: 0.5rem 0 0 0.5rem;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    }
+    .info-container {
+      padding: 1.5rem 2rem 1rem;
+      background: $White;
+      grid-area: info;
+      border-radius: 0 0.5rem 0.5rem 0;
+      header {
+        .heading {
+          color: $Very-Dark-Grayish-Blue;
+          font-size: 1.1rem;
+        }
+        .paragraph {
+          color: $Desaturated-Dark-Blue;
+          font-size: 0.7rem;
+          line-height: 1.5;
+        }
+        margin-bottom: 1.5rem;
+      }
+      .profile {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        .profile-pic {
+          width: 2rem;
+          border-radius: 50%;
+        }
+        .profile-info {
+          display: flex;
+          flex-direction: column;
+          .profile-name {
+            color: $Very-Dark-Grayish-Blue;
+            font-size: 0.7rem;
+            margin: 0;
+          }
+          .profile-date {
+            color: $Desaturated-Dark-Blue;
+            font-size: 0.7rem;
+            margin: 0;
+          }
+        }
+        .share-container {
+          position: relative;
+          right: 0;
+          padding: 0.2rem 0 0 1.5rem;
+          .share-btn-container {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: $Desaturated-Dark-Blue;
+            position: absolute;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            .share-btn {
+              width: 0.65rem;
+              height: 0.6rem;
+              background: $Desaturated-Dark-Blue;
+            }
+          }
+          .share-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 13rem;
+            grid-template-columns: 3fr repeat(3, 1fr);
+            height: 2.8rem;
+            border-radius: 0.5rem;
+            background: $Very-Dark-Grayish-Blue;
+            position: absolute;
+            left: -140%;
+            top: -200%;
+            opacity: 0;
+            &::before {
+              content: "";
+              width: 1rem;
+              height: 1rem;
+              background: $Very-Dark-Grayish-Blue;
+              position: absolute;
+              bottom: -15%;
+              transform: rotate(45deg);
+            }
+            h2 {
+              text-transform: uppercase;
+              letter-spacing: 0.2rem;
+              color: $Grayish-Blue;
+              font-size: 0.7rem;
+              font-weight: 500;
+              padding: 0 0.5rem;
+              cursor: pointer;
+            }
+            img {
+              width: 1rem;
+              height: 1rem;
+              padding: 0 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .attribution {
+    font-size: 0.8rem;
+    text-align: center;
+    color: $Desaturated-Dark-Blue;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    a {
+      color: $Very-Dark-Grayish-Blue;
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    .main {
+      min-width: 20rem;
+      width: unquote("min(80%, 20rem)");
+      min-height: 30rem;
+      height: unquote("min(70%, 30rem)");
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "image image"
+        "info info"
+        "info info";
+
+      .img-container {
+        width: 20rem;
+        height: 12rem;
+        grid-area: image;
+        img {
+          border-radius: 0.5rem 0.5rem 0 0;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .info-container {
+        border-radius: 0 0 0.5rem 0.5rem;
+        header {
+          .paragraph {
+            font-size: 0.8rem;
+            line-height: 1.8;
+            font-weight: 500;
+          }
+        }
+        .profile {
+          .profile-pic {
+            width: 2.5rem;
+            margin-right: 1rem;
+          }
+          .profile-info {
+            .profile-name {
+              font-size: 0.8rem;
+            }
+            .profile-date {
+              font-size: 0.8rem;
+            }
+          }
+          .share-container {
+            right: 1.8rem;
+            .share-btn-container {
+              background: $Light-Grayish-Blue;
+              width: 2rem;
+              height: 2rem;
+              .share-btn {
+                width: 0.85rem;
+                height: 0.8rem;
+                background: $Light-Grayish-Blue;
+              }
+            }
+            .share-links {
+              left: -360%;
+              &::before {
+                right: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    .main {
+      .info-container {
+        .profile {
+          .share-container {
+            .share-btn-container {
+              z-index: 2;
+              .share-btn {
+                width: 0.85rem;
+                height: 0.8rem;
+              }
+            }
+            .share-links {
+              display: flex;
+              justify-content: start;
+              align-items: center;
+              width: 20rem;
+              height: 4rem;
+              left: -678%;
+              top: -25%;
+              border-radius: 0 0 0.5rem 0.5rem;
+              &::before {
+                opacity: 0;
+              }
+              h2 {
+                padding-left: 1.5rem;
+                font-size: 0.9rem;
+              }
+              img {
+                width: 1.2rem;
+                height: 1.2rem;
+                padding: 0 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
